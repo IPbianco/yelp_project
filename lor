@@ -1,0 +1,20 @@
+[33m*[0m[33m*[0m[33m*[0m
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+[33m
+  1) Restaurant add some examples to (or delete) /Users/tabishraza/Projects/week8/yelp_project/spec/models/restaurant_spec.rb[0m
+     [36m# Not yet implemented[0m
+[36m     # ./spec/models/restaurant_spec.rb:4
+[0m[33m
+  2) Review add some examples to (or delete) /Users/tabishraza/Projects/week8/yelp_project/spec/models/review_spec.rb[0m
+     [36m# Not yet implemented[0m
+[36m     # ./spec/models/review_spec.rb:4
+[0m[33m
+  3) User add some examples to (or delete) /Users/tabishraza/Projects/week8/yelp_project/spec/models/user_spec.rb[0m
+     [36m# Not yet implemented[0m
+[36m     # ./spec/models/user_spec.rb:4
+[0m
+
+Finished in 0.00117 seconds (files took 1.55 seconds to load)
+[33m3 examples, 0 failures, 3 pending[0m
+
