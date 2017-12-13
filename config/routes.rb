@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 devise_for :users, controllers: { sessions: 'users/sessions' }
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-root to: 'users#index'
+root to: 'restaurants#index'
 
-resources :reviews, only: [:index, :new, :create]
 # resources :users
 # root 'reviews#index'
 # get '/reviews/index', to: 'reviews#index'
@@ -13,6 +12,10 @@ resources :reviews, only: [:index, :new, :create]
 # post '/reviews/new', to: 'reviews#new'
 
 
-resources :restaurants, only: [:index, :new, :create]
+resources :restaurants, only: [:index, :new, :create] 
+
+resources :reviews, only: [:index, :new, :create]
+
+get '/restaurants/:id', to: "restaurants#show", as: 'restaurant'
 
 end
