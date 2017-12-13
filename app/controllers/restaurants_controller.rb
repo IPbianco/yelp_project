@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.reverse
   end
 
   def new
