@@ -5,13 +5,19 @@
     <title></title>
   </head>
   <body>
+    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+    <h1> Restaurants </h1>
+    <a href='/restaurants/new'>Add Restaurant </a>
+    <br>
     <% @restaurants.each do |restaurant| %>
+    <ul>
       <div class="name">
-        <%= restaurant.name %>
+        <li><a href="/restaurants/<%=restaurant.id%>"><%= restaurant.name %></a></li>
       </div>
       <div class="description">
-        <%= restaurant.description %>
+        <li><%= restaurant.description %></li>
       </div>
+    </ul>
    <% end %>
   </body>
 </html>
