@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-  # before(:all) do
-  #   user = User.create(name: "Eva", email: "baguette@frenchy.com", password:"123")
-  #   Restaurant.create(name: "Eva's", description: "baguettes ONLY", user_id: user.id)
-  # end
-
 feature 'Create a review' do
   scenario 'fill in the form' do
     user = User.create(name: "Eva", email: "baguette@frenchy.com", password:"123")
