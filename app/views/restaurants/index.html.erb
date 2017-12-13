@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% @restaurants.each do |restaurant| %>
+      <div class="name">
+        <%= restaurant.name %>
+      </div>
+      <div class="description">
+        <%= restaurant.description %>
+      </div>
+   <% end %>
+  </body>
+</html>
