@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(title: params[:title],
                         description: params[:description],
-                        rating: params[:rating], user_id: 1, restaurant_id: 1)
+                        rating: params[:rating], user_id: 2, restaurant_id: 2)
       redirect_to '/reviews'
   end
 end

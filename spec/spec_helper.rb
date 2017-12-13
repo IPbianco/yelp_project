@@ -35,6 +35,26 @@ RSpec.configure do |config|
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
+
+    config.before(:suite) do
+      DatabaseCleaner.clean_with(:truncation)
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.strategy = :transaction
+    end
+
+    config.before(:each, js: true) do
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.append_after(:each) do
+      DatabaseCleaner.clean
+    end
   end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will

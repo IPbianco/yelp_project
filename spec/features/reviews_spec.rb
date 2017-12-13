@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Create a review' do
   scenario 'fill in the form' do
-    user = User.create(name: "Eva", email: "baguette@frenchy.com", password:"123")
+    user = User.create(name: "Dima", email: "baguette@frenchy.com", password:"123")
     Restaurant.create(name: "Eva's", description: "baguettes ONLY", user_id: user.id)
     visit("/reviews/new")
     fill_in 'title', with: 'title'
