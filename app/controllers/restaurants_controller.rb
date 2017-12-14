@@ -10,7 +10,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    Restaurant.create(name: params[:name], description: params[:description], user_id: 1)
+
+    rest = Restaurant.create(name: params[:name], description: params[:description], user_id: 1)
+    p ':::::::::::::', rest
+    imagge = Image.create(source: params[:image], restaurant_id: rest.id)
+    p '::::::::::' , imagge
     redirect_to ("/restaurants")
   end
 
