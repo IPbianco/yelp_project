@@ -11,7 +11,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    render file: Rails.public_path.join("templates","one_restaurant.html"), layout: true
+    respond_to do |format|
+      @restaurant = Restaurant.find(params[:id])
+      format.json { render :json => @restaurant }
+      format.html { render :file => Rails.public_path.join("templates","one_restaurant.html"), layout: true}
+    end
   end
 
   def create

@@ -2,23 +2,31 @@
 
 window.addEventListener("load", function() {
 
+  var currentRestaurantId
+  var request
+  var data
+  var contentDiv
+
   function getId(location){
     return parseInt(location.pathname.split("/").pop())
   }
 
-  var currentRestaurantId = getId(window.location);
-
   function getReviews(){
-    var request = new XMLHttpRequest();
+    request = new XMLHttpRequest();
     request.onreadystatechange = function() {
-
       if (request.readyState == 4 && request.status == 200) {
-        var data = JSON.parse(request.response).reviews;
-        console.log(data);
+        data = JSON.parse(request.response).reviews;
+        console.log(data)
+        data.forEach(function(review) {
+          contentDiv.innerHTML += review.title
+        })
       }
     }
     request.open("GET", `/restaurants/${currentRestaurantId}/reviews`, true)
-     request.send(null);
+    request.send(null);
   }
+
+  currentRestaurantId = getId(window.location);
+  contentDiv = document.getElementById("content");
   getReviews()
 });
