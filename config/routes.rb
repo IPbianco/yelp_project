@@ -11,11 +11,8 @@ root to: 'restaurants#index'
 # get '/reviews/new', to: 'reviews#new'
 # post '/reviews/new', to: 'reviews#new'
 
-
-resources :restaurants, only: [:index, :new, :create] 
-
-resources :reviews, only: [:index, :new, :create]
-
-get '/restaurants/:id', to: "restaurants#show", as: 'restaurant'
+resources :restaurants, only: [:index, :new, :create, :show] do
+  resources :reviews, only: [:index, :new, :create]
+end
 
 end

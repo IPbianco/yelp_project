@@ -17,7 +17,7 @@
 <br>
 <br>
 
-<form action="../reviews" method="post">
+<form action="<%= @restaurant.id %>/reviews" method="post">
   <h4>Add a review </h4>
   <input type='hidden' name='restaurant' value="<%= @restaurant.id %>" />
   <input type='text' name='title' placeholder="Title..."><br />
