@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
     self.all.each do | ind |
       data <<  { id:       ind.id,
                  name:     ind.name,
-                 location: ind.description,
+                 description: ind.description,
                  images:   ind.images.first
               }
     end
