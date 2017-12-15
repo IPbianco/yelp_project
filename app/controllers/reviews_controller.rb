@@ -8,11 +8,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
+    rating = params[:rating].to_i
+    restaurant_id = params[:restaurant].to_i
+
     @review = Review.create(title: params[:title],
                         description: params[:description],
-                        rating: params[:rating],
+                        rating: rating,
                         user_id: current_user.id,
-                        restaurant_id: params[:restaurant])
-    redirect_to "/restaurants/#{params[:restaurant]}"
+                        restaurant_id: restaurant_id)
+
+    # redirect_to "/restaurants/#{params[:restaurant]}"
   end
 end
