@@ -4,11 +4,11 @@ class RestaurantsController < ApplicationController
 
 
   def index
-    if user_signed_in?
-      render json: { restaurants: Restaurant.all}
-    else
-      redirect_to ("/users/sign_in")
-    end
+    # if user_signed_in?
+      render json: { restaurants: Restaurant.all_data}
+    # else
+    #   redirect_to ("/users/sign_in")
+    # end
   end
 
   def new
