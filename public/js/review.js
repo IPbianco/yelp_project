@@ -11,19 +11,10 @@ window.addEventListener("load", function() {
     return parseInt(location.pathname.split("/").pop())
   }
 
-  function getReviews(){
-    request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if (request.readyState == 4 && request.status == 200) {
-        data = JSON.parse(request.response).reviews;
-        console.log(data)
-        data.forEach(function(review) {
-          contentDiv.innerHTML += review.title
-        })
-      }
-    }
-    request.open("GET", `/restaurants/${currentRestaurantId}/reviews`, true)
-    request.send(null);
+  function getReviews() {
+    $.get(`/restaurants/${currentRestaurantId}/reviews`, function(data) {
+      console.log(data)
+    })
   }
 
   currentRestaurantId = getId(window.location);
