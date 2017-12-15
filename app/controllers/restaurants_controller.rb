@@ -3,12 +3,13 @@ class RestaurantsController < ApplicationController
 
 
 
+
   def index
-    # if user_signed_in?
-      render json: { restaurants: Restaurant.all_data}
-    # else
-    #   redirect_to ("/users/sign_in")
-    # end
+    respond_to do |format|
+        @restaurants = Restaurant.all_data
+        format.json { render :json => @restaurants }
+        format.html { render file: Rails.public_path.join("templates","restaurants.html"), layout: true}
+      end
   end
 
   def new
